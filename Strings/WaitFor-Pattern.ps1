@@ -1,10 +1,9 @@
 # ---------------------------------------------------
 # -  Author: Jim Roton
 # -    Date: 2023.07.17
-# -    Desc: Waits for a pattern in a string and returns "Found It"
-#       when the string is discovered in the string. Good for running
-#       a command that outputs a string and waiting for some given text
-#       in the string output.
+# -    Desc: Waits for a pattern in a string and returns "Found It" when the pattern is discovered
+#       in the string. Good for running a command that outputs a string as its return and waiting for
+#       some given pattern in the string output before exuting some downstream command.
 #
 # - Example: WaitFor-Pattern -Pattern "12:00" -ScriptBlock { Get-Date }
 # - Example: WaitFor-Pattern -Pattern "12:00" -ScriptBlock { Get-Date } -WaitInterval 1
