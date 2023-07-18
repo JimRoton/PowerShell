@@ -14,12 +14,13 @@ Items/Rename-Items.ps1
          Path: (Optional) Path used to generate list of items to perform replace on.<br>
       Recurse: (Optional) Recurse switch used with Path to generate a recurse list of items.<br>
 
-- Example: Rename-Items -OldValue "foo" -NewValue "bar";
-- Example: Rename-Items -OldValue "foo" -NewValue "bar" -Filter "*.txt"
-- Example: Rename-Items -OldValue "foo" -NewValue "bar" -Filter "*.txt" -Recurse
-- Example: Rename-Items -OldValue "foo" -NewValue "bar" -Path "..\FooBar\" -Filter "*.txt" -Recurse
-- Example: Rename-Items -OldValue "foo" -NewValue "bar" -ItemList $ItemList
-- Example: Rename-Items -OldValue "foo" -NewValue "bar" -ScriptBlock { Get-ChildItem }
+- Examples:<br>
+   Rename-Items -OldValue "foo" -NewValue "bar";<br>
+   Rename-Items -OldValue "foo" -NewValue "bar" -Filter "*.txt";<br>
+   Rename-Items -OldValue "foo" -NewValue "bar" -Filter "*.txt" -Recurse;<br>
+   Rename-Items -OldValue "foo" -NewValue "bar" -Path "..\FooBar\" -Filter "*.txt" -Recurse;<br>
+   Rename-Items -OldValue "foo" -NewValue "bar" -ItemList $ItemList;<br>
+   Rename-Items -OldValue "foo" -NewValue "bar" -ScriptBlock { Get-ChildItem };<br>
 
 --------------------------------------------------------------------------------
 
