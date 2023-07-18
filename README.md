@@ -5,7 +5,7 @@ Items/Rename-Items.ps1
 
 - Summary: Renames multiple items given a 'OldValue' and 'NewValue'. Optionally provide a 'FileList' as list, path, filter, or script. Optionally perform operation as recurse
 
-- Inputs:
+- Inputs:<br>
      OldValue: String value to be replaced.
      NewValue: String value to replace with.
      ItemList: (Optional) List of items to perform replace on.
