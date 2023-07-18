@@ -29,7 +29,7 @@ Strings/WaitFor-Pattern.ps1
 - Summary: Waits for a pattern in a string and returns "Found It" when the string is discovered in the string. Good for running a command that outputs a string and waiting for some given text in the string output.
 
 - Inputs:<br>
-&nbsp;Pattern: The string pattern to wait for.<br>
+Pattern: The string pattern to wait for.<br>
       ScriptBlock: The script block to run which returns a string.<br>
      WaitInterval: (Optional) In seconds, the time to wait between executions of Script Block (default: 0).<br>
   TimeoutInterval: (Optional) Number of loops before giving up (default: indefinite).<br>
