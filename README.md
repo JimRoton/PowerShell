@@ -6,13 +6,13 @@ Items/Rename-Items.ps1
 - Summary: Renames multiple items given a 'OldValue' and 'NewValue'. Optionally provide a 'FileList' as list, path, filter, or script. Optionally perform operation as recurse
 
 - Inputs:<br>
-     OldValue: String value to be replaced.
-     NewValue: String value to replace with.
-     ItemList: (Optional) List of items to perform replace on.
-  ScriptBlock: (Optional) Script to generate list of items to perfrom replace on.
-       Filter: (Optional) Filter used to generate list of items to perform replace on.
-         Path: (Optional) Path used to generate list of items to perform replace on.
-      Recurse: (Optional) Recurse switch used with Path to generate a recurse list of items.
+     OldValue: String value to be replaced.<br>
+     NewValue: String value to replace with.<br>
+     ItemList: (Optional) List of items to perform replace on.<br>
+  ScriptBlock: (Optional) Script to generate list of items to perfrom replace on.<br>
+       Filter: (Optional) Filter used to generate list of items to perform replace on.<br>
+         Path: (Optional) Path used to generate list of items to perform replace on.<br>
+      Recurse: (Optional) Recurse switch used with Path to generate a recurse list of items.<br>
 
 - Example: Rename-Items -OldValue "foo" -NewValue "bar";
 - Example: Rename-Items -OldValue "foo" -NewValue "bar" -Filter "*.txt"
