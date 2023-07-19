@@ -67,7 +67,7 @@ try {
     }
 
     # if no list then use local directory list
-    elseif ($ItemList -eq $null){
+    elseif ($null -eq $ItemList){
         $ItemList = Get-ChildItem;
     }
 

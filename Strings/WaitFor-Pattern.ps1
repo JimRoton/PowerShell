@@ -46,7 +46,7 @@ try {
         $rtn = Select-String -Pattern $Pattern -InputObject $val -ErrorAction Stop;
 
         # return if pattern is found (or not found)
-        if ((($rtn -ne $null) -and !$IsAntipattern) -or (($rtn -eq $null) -and $IsAntipattern)){
+        if ((($null -ne $rtn) -and !$IsAntipattern) -or (($null -eq $rtn) -and $IsAntipattern)){
 
             Write-Host "Found It!";
             
