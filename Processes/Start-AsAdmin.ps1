@@ -27,11 +27,11 @@ try {
 
     # use runas on windows
     if ($IsWindows){
-        Start-Process -FilePath $FilePath -ArgumentList $Arguments -Verb RunAs -ErrorAction Stop;
+        Start-Process -FilePath "pwsh" -ArgumentList "-command", (@($FilePath) + @($Arguments)) -Verb RunAs -ErrorAction Stop;
 
     # use sudo on mac and linux
     } else {
-        Start-Process -FilePath "sudo" -ArgumentList (@($FilePath) + @($Arguments));
+        Start-Process -FilePath "sudo" -ArgumentList (@($FilePath) + @($Arguments)) -ErrorAction Stop;
     }
 } catch {
     Write-Host -ForegroundColor Red $_;
