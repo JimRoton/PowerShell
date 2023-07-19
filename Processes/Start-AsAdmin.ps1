@@ -23,8 +23,7 @@ param(
 )
 
 try {
-    # $verbs = New-Object System.Diagnostics.ProcessStartInfo -Args $FilePath
-    # $verbs;
+
     # use runas on windows
     if ($IsWindows){
         Start-Process -FilePath "pwsh" -ArgumentList (@("-noexit") + @("-command") + @($FilePath) + @($Arguments)) -Verb RunAs -ErrorAction Stop;
