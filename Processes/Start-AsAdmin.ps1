@@ -1,20 +1,19 @@
 # ---------------------------------------------------
 # -  Author: Jim Roton
 # -    Date: 2023.07.18
-# -    Desc: Run any process with elevated privilages (Windows only). Defaults to running a new
-#       PowerShell window as administrator.
+# -    Desc: Run any process with elevated privilages.
 #
 # - Example: Start-AsAdmin
 # - Example: Start-AsAdmin -FilePath "cmd.exe"
-# - Example: Start-AsAdmin -FilePath "pwsh.exe" -Arguments "-noexit", "-command ""cmd.exe /C help"""
+# - Example: Start-AsAdmin -FilePath "cmd.exe" -Arguments "/C help"
 # ---------------------------------------------------
 param(
     [Parameter(
         Position        = 0,
-        Mandatory       = $False,
+        Mandatory       = $True,
         HelpMessage     = "Process to run as administrator."
     )]
-    [String] $FilePath  = "pwsh.exe",
+    [String] $FilePath,
     [Parameter(
         Position        = 1,
         Mandatory       = $False,
