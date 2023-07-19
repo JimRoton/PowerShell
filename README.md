@@ -5,7 +5,7 @@ Table of Contents
 =================
 
  - [Rename-Items](#Items/Rename-Items)
- - [WaitFor-Pattern](#WaitFor-Pattern)
+ - [WaitFor-Pattern](#Strings-WaitFor-Pattern)
 
 Items/Rename-Items
 ==================
@@ -33,8 +33,8 @@ Examples:
 
 --------------------------------------------------------------------------------
 
-WaitFor-Pattern
-===============
+Strings/WaitFor-Pattern
+=======================
 
 Summary: Waits for a pattern in a string and returns "Found It" when the string is discovered in the string. Good for running a command that outputs a string and waiting for some given text in the string output.
 
