@@ -4,7 +4,7 @@ A collection of PowerShell Scripts that perform various functions that would nor
 Table of Contents
 =================
 
- - [Rename-Items](#Items/Rename-Items)
+ - [Rename-Items](#Items-Rename-Items)
  - [WaitFor-Pattern](#Strings-WaitFor-Pattern)
 
 Items/Rename-Items
