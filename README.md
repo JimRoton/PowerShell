@@ -39,7 +39,7 @@ Examples:
 --------------------------------------------------------------------------------
 
 Start-AsAdmin
-============
+=============
 
 Summary: Run any process with elevated privilages.
 
@@ -59,8 +59,8 @@ Examples:
 
 --------------------------------------------------------------------------------
 
-Strings/WaitFor-Pattern
-=======================
+WaitFor-Pattern
+===============
 
 Summary: Waits for a pattern in a string and returns "Found It" when the string is discovered in the string. Good for running a command that outputs a string and waiting for some given text in the string output.
 
