@@ -2,6 +2,7 @@
 A collection of PowerShell Scripts
 
 Items/Rename-Items.ps1
+======================
 
 - Summary: Renames multiple items given a 'OldValue' and 'NewValue'. Optionally provide a 'FileList' as list, path, filter, or script. Optionally perform operation as recurse
 
