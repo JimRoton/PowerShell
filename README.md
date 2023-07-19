@@ -4,13 +4,17 @@ A collection of PowerShell Scripts that perform various functions that would nor
 Table of Contents
 =================
 
- - [Rename-Items](#Items-Rename-Items)
- - [WaitFor-Pattern](#Strings-WaitFor-Pattern)
+ - [Rename-Items](#Rename-Items)
+ - [WaitFor-Pattern](#WaitFor-Pattern)
 
-Items/Rename-Items
-==================
+Rename-Items
+============
 
 Summary: Renames multiple items given a 'OldValue' and 'NewValue'. Optionally provide a 'FileList' as list, path, filter, or script. Optionally perform operation as recurse
+
+Location:
+---------
+Items/Rename-Items.ps1
 
 Inputs:
 -------
@@ -37,6 +41,10 @@ Strings/WaitFor-Pattern
 =======================
 
 Summary: Waits for a pattern in a string and returns "Found It" when the string is discovered in the string. Good for running a command that outputs a string and waiting for some given text in the string output.
+
+Location:
+---------
+Strings/WaitFor-Pattern.ps1
 
 Inputs:
 -------
