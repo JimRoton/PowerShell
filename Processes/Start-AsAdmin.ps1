@@ -27,7 +27,7 @@ try {
 
     # use runas on windows
     if ($IsWindows){
-        Start-Process -FilePath "pwsh" -ArgumentList "-command", (@($FilePath) + @($Arguments)) -Verb RunAs -ErrorAction Stop;
+        Start-Process -FilePath "pwsh" -ArgumentList (@("-noexit") + @("-command") + @($FilePath) + @($Arguments)) -Verb RunAs -ErrorAction Stop;
 
     # use sudo on mac and linux
     } else {
