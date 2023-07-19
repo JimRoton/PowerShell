@@ -9,7 +9,7 @@ Table of Contents
  - [WaitFor-Pattern](#WaitFor-Pattern)
 
 Rename-Items
-=============
+============
 
 Summary: Renames multiple items given a 'OldValue' and 'NewValue'. Optionally provide a 'FileList' as list, path, filter, or script. Optionally perform operation as recurse
 
