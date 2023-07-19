@@ -5,6 +5,7 @@ Table of Contents
 =================
 
  - [Rename-Items](#Rename-Items)
+ - [Start-AsAdmin](#Start-AsAdmin)
  - [WaitFor-Pattern](#WaitFor-Pattern)
 
 Rename-Items
@@ -34,6 +35,27 @@ Examples:
     Rename-Items -OldValue "foo" -NewValue "bar" -Path "..\FooBar\" -Filter "*.txt" -Recurse;
     Rename-Items -OldValue "foo" -NewValue "bar" -ItemList $ItemList;
     Rename-Items -OldValue "foo" -NewValue "bar" -ScriptBlock { Get-ChildItem };
+
+--------------------------------------------------------------------------------
+
+Start-AsAdmin
+============
+
+Summary: Run any process with elevated privilages.
+
+Location:
+---------
+Processes/Start-AsAdmin.ps1
+
+Inputs:
+-------
+&nbsp;&nbsp;- FilePath: Process to run as administrator.<br>
+&nbsp;&nbsp;- Arguments: Additional arguments passed to process.<br>
+
+Examples:
+---------
+    Start-AsAdmin -FilePath "cmd";
+    Start-AsAdmin -FilePath "cmd" -Arguments "/c help";
 
 --------------------------------------------------------------------------------
 
