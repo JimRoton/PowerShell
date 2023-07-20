@@ -4,9 +4,9 @@ A collection of PowerShell Scripts that perform various functions that would nor
 Table of Contents
 =================
 
- - [Rename-Items](#Rename-Items)
- - [Start-AsAdmin](#Start-AsAdmin)
- - [WaitFor-Pattern](#WaitFor-Pattern)
+ - [Rename-Items](#rename-items)
+ - [Start-AsAdmin](#start-asadmin)
+ - [WaitFor-Pattern](#waitfor-pattern)
 
 Rename-Items
 ============
