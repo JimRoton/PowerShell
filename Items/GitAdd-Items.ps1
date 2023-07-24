@@ -23,13 +23,35 @@ param(
     [String] $Pattern        = ""
 )
 
+Function DoReplace {
+    param(
+        [Parameter(
+            Position        = 0,
+            Mandatory       = $True
+        )]
+        [String] $Pattern   = "",
+        [Parameter(
+            Position        = 1,
+            Mandatory       = $True
+        )]
+        [String] $Value      = ""
+    )
+
+    return $Value.Replace($Pattern, "").Trim();
+}
+
 try {
 
     # get item list by filter
     if ($null -eq $ItemList){
 #        $ItemList = Start-Process -FilePath "git" -ArgumentList "status", "-s" -WorkingDirectory $Path -PassThru -ErrorAction Stop;
-        $FileList = (git $FilePath status -s) -Match "^\?";
-$FileList;        
+        $FileList = (git $FilePath status -s);
+
+        foreach ($_ in $FileList) {
+            $rtn = DoReplace -Pattern "M " -Value $_;
+            $rtn;
+        }
+#        $FileList | DoReplace -Pattern "M " -Value { $_ };
         # foreach ($_ in $FileList){
         #     ($_ -Split " ")[2];
         #     #            $ItemList.Add($_.Split(" ")[1]);
@@ -40,7 +62,7 @@ $FileList;
     #     $ItemList | Start-Process -FilePath "git" -ArgumentList {"-add", $_};
     # }
 
-#    $ItemList;
+    #$FileList;
 } catch {
     Write-Host -ForegroundColor Red $_;
 }
