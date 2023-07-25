@@ -29,7 +29,7 @@ Function DoReplace {
             Position        = 0,
             Mandatory       = $True
         )]
-        [String] $Pattern   = "",
+        [String[]] $Pattern   = "",
         [Parameter(
             Position        = 1,
             Mandatory       = $True
@@ -37,7 +37,12 @@ Function DoReplace {
         [String] $Value      = ""
     )
 
-    return $Value.Replace($Pattern, "").Trim();
+    foreach ($_ in $Pattern){
+$Value.Match("^M ");
+        $Value = $Value.Replace($_, "");
+    }
+
+    return $Value;
 }
 
 try {
@@ -48,21 +53,13 @@ try {
         $FileList = (git $FilePath status -s);
 
         foreach ($_ in $FileList) {
-            $rtn = DoReplace -Pattern "M " -Value $_;
-            $rtn;
+            $UpdatedList = DoReplace -Pattern (" M ", "?? ") -Value $_;
         }
-#        $FileList | DoReplace -Pattern "M " -Value { $_ };
-        # foreach ($_ in $FileList){
-        #     ($_ -Split " ")[2];
-        #     #            $ItemList.Add($_.Split(" ")[1]);
-        # }
+
+        $FileList = $UpdatedList;
     }
 
-    # if ($null -ne $ItemList){
-    #     $ItemList | Start-Process -FilePath "git" -ArgumentList {"-add", $_};
-    # }
-
-    #$FileList;
+    $FileList;
 } catch {
     Write-Host -ForegroundColor Red $_;
 }
