@@ -29,12 +29,12 @@ Function DoReplace {
             Position        = 0,
             Mandatory       = $True
         )]
-        [String[]] $Pattern   = "",
+        [String[]] $Pattern,
         [Parameter(
             Position        = 1,
             Mandatory       = $True
         )]
-        [String] $Value      = ""
+        [String] $Value
     )
 
     foreach ($_ in $Pattern){
