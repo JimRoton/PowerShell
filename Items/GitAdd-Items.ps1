@@ -2,7 +2,7 @@
 param(
     [Parameter(
         Position            = 0,
-        Mandatory           = $True,
+        Mandatory           = $False,
         HelpMessage         = "Items to git.add.",
         ParameterSetName    = "ItemList"
     )]
@@ -15,31 +15,39 @@ param(
     )]
     [String] $Path          = ".",
     [Parameter(
-        Position            = 0,
+        Position            = 1,
         Mandatory           = $False,
         HelpMessage         = "Filter for selecting items.",
         ParameterSetName    = "ItemPath"
     )]
-    [String] $Pattern        = ""
+    [String] $Pattern       = "",
+    [Parameter(
+        Mandatory           = $False,
+        HelpMessage         = "Show verbose logging messages."
+    )]
+    [Switch] $Log       = $False
 )
 
-Function DoReplace {
-    param(
-        [Parameter(
-            Position        = 0,
-            Mandatory       = $True
-        )]
-        [String[]] $Pattern,
-        [Parameter(
-            Position        = 1,
-            Mandatory       = $True
-        )]
-        [String] $Value
-    )
+Function IIf($If, $Right, $Wrong) {
+    If ($If) { $Right } Else { $Wrong }
+}
+
+Function Log($Message, $LogType = "Green") {
+    if ($Log){
+        Write-Host -ForegroundColor $LogType $Message;
+    }
+}
+
+Function DoReplace ($Pattern, $Value) {
+
+    Log -Message "Value: $($Value)";
 
     foreach ($_ in $Pattern){
-$Value.Match("^M ");
-        $Value = $Value.Replace($_, "");
+        Log -Message "Pattern: '$($_)'";
+
+        if ($Value -Match $_){
+            $Value = $Value.Replace($_, "");
+        }
     }
 
     return $Value;
@@ -53,7 +61,7 @@ try {
         $FileList = (git $FilePath status -s);
 
         foreach ($_ in $FileList) {
-            $UpdatedList = DoReplace -Pattern (" M ", "?? ") -Value $_;
+            $UpdatedList = DoReplace -Pattern ("^ M ", "^\?\? ") -Value $_;
         }
 
         $FileList = $UpdatedList;
