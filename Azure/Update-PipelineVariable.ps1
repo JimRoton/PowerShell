@@ -1,3 +1,20 @@
+# ---------------------------------------------------
+# -  Author: Jim Roton
+# -    Date: 2023.07.20
+# -    Desc: Updates an Azure pipeline variable
+#       group item value. Using the varible group ID
+#       and access token, this script updates the
+#       variable value. This script is good when you
+#       need to use a variable group value in another
+#       task on your pipeline and then update it from
+#       a different task.
+#
+# - Example: Update-PipelineVariable `
+#               -VariableGroupId 01 `
+#               -VariableName 'foo' `
+#               -VariableValue 'bar' `
+#               -AccessToken $System.AccessToken;
+# ---------------------------------------------------
 param(
     [Parameter(
         Position            = 0,
@@ -39,7 +56,10 @@ try {
     $Headers = @{Authorization = "Bearer $AccessToken"};
 
     # get values
-    $Values = Invoke-RestMethod -Uri $Uri -Headers $Headers;
+    $Values = Invoke-RestMethod `
+        -Uri $Uri `
+        -Headers $Headers
+        -ErrorAction Stop;
 
     Write-Host $Values | ConvertTo-Json -Depth 100;
     
