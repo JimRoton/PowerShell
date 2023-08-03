@@ -21,7 +21,7 @@ try{
     $Value = Get-Content -Path $Path -ErrorAction Stop;
     $RxMatches = $Value -Match $Pattern;
 
-    if ($RxMatches -eq $False) {
+    if ($RxMatches.Length -eq 0) {
         throw "Not text was found using pattern '$($Pattern)'."
     } else {
         $RxMatches | ForEach-Object { Write-Host "Text: '$($_)'" }
