@@ -1,10 +1,32 @@
-﻿param(
-    [Parameter(Mandatory=$true)]
-    [String]$Path,
-    [Parameter(Mandatory=$true)]
-    [String]$Pattern,
-    [Parameter(Mandatory=$true)]
-    [String]$Replacement
+﻿# ---------------------------------------------------
+# -  Author: Jim Roton
+# -    Date: 2023.07.30
+# -    Desc: Replaces a string value in a file
+#       using a pattern and a value. This script
+#       is good when you want to replace a placeholder
+#       value in a file with the actual value.
+#
+# - Example: Replace-String -Path "C:\Myfile.txt" -Pattern "foo" -Replacement "bar"
+# ---------------------------------------------------
+param(
+    [Parameter(
+        Position    = 0,
+        Mandatory   = $True,
+        HelpMessage = "Path to the file to be processed."
+    )]
+    [String] $Path,
+    [Parameter(
+        Position    = 1,
+        Mandatory   = $True,
+        HelpMessage = "Regex pattern for value to be replaced."
+    )]
+    [String] $Pattern,
+    [Parameter(
+        Position    = 2,
+        Mandatory   = $True,
+        HelpMessage = "Value to be used in replace--new value."
+    )]
+    [String] $Replacement
 )
 
 Write-Host "Path: '$Path'";
