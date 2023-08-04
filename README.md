@@ -8,6 +8,7 @@ Table of Contents
  - [Get-Add-Items](#get-additems)
  - [Increment-Version](#increment-version)
  - [Rename-Items](#rename-items)
+ - [Replace-String](#replace-string)
  - [Start-AsAdmin](#start-asadmin)
  - [Update-PipelineVariable](#update-pipelinevariable)
  - [WaitFor-Pattern](#waitfor-pattern)
@@ -107,6 +108,27 @@ Examples:
     Rename-Items -OldValue "foo" -NewValue "bar" -Path "..\FooBar\" -Filter "*.txt" -Recurse;
     Rename-Items -OldValue "foo" -NewValue "bar" -ItemList $ItemList;
     Rename-Items -OldValue "foo" -NewValue "bar" -ScriptBlock { Get-ChildItem };
+
+--------------------------------------------------------------------------------
+
+Replace-String
+==============
+
+Summary: Replaces a string value in a file using a pattern and a value. This script is good when you want to replace a placeholder value in a file with the actual value.
+
+Location:
+---------
+String/Replace-String.ps1
+
+Inputs:
+-------
+&nbsp;&nbsp;- Path: Path to the file to be processed.<br>
+&nbsp;&nbsp;- Pattern: Regex pattern for value to be replaced.<br>
+&nbsp;&nbsp;- Replacement: Value to be used in replace--new value.<br>
+
+Examples:
+---------
+    Replace-String -Path "C:\Myfile.txt" -Pattern "foo" -Replacement "bar"
 
 --------------------------------------------------------------------------------
 
