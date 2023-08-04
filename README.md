@@ -5,6 +5,7 @@ Table of Contents
 =================
 
  - [Get-ItemVersion](#get-itemversion)
+ - [Get-Add-Items](#get-additems)
  - [Rename-Items](#rename-items)
  - [Start-AsAdmin](#start-asadmin)
  - [Update-PipelineVariable](#update-pipelinevariable)
@@ -28,6 +29,32 @@ Inputs:
 Examples:
 ---------
     Get-ItemVersion -Path "C:\MySample.dll"
+
+--------------------------------------------------------------------------------
+
+GitAdd-Items
+===========
+
+Summary: (WIP) Get files that have been modified for git and...
+
+Location:
+---------
+Items/GitAdd-Items.ps1
+
+Inputs:
+-------
+&nbsp;&nbsp;- ItemList: Items to git.add.<br>
+&nbsp;&nbsp;- Path: Path to search for items.<br>
+&nbsp;&nbsp;- Pattern: Filter for selecting items.<br>
+&nbsp;&nbsp;- Log: Show verbose logging messages.<br>
+
+Examples:
+--------
+    GitAdd-Items
+    GitAdd-Items -ItemList [List of files in git repo]
+    GitAdd-Items -Path "C:\Repos\MyRepo"
+    GitAdd-Items -Path "C:\Repos\MyRepo" -Pattern "*.xml"
+    GitAdd-Items -Path "C:\Repos\MyRepo" -Pattern "*.xml" -Log
 
 --------------------------------------------------------------------------------
 
