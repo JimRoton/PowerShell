@@ -19,7 +19,7 @@ param(
     [Parameter(
         Position            = 0,
         Mandatory           = $True,
-        HelpMessage         = "Azure DevOps Variable Group")]
+        HelpMessage         = "Azure DevOps Variable Group ID")]
     [String]$VariableGroupId,
     [Parameter(
         Position            = 1,
