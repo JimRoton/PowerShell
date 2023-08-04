@@ -4,9 +4,32 @@ A collection of PowerShell Scripts that perform various functions that would nor
 Table of Contents
 =================
 
+ - [Get-ItemVersion](#get-itemversion)
  - [Rename-Items](#rename-items)
  - [Start-AsAdmin](#start-asadmin)
+ - [Update-PipelineVariable](#update-pipelinevariable)
  - [WaitFor-Pattern](#waitfor-pattern)
+
+--------------------------------------------------------------------------------
+
+Get-ItemVersion
+===============
+
+Summary: Returns the FileVersion of a file. The file must be an executable file or dynamic link library file.
+
+Locations:
+----------
+Items/Get-ItemVersion.ps1
+
+Inputs:
+-------
+&nbsp;&nbsp;- Path: Path to the dll or executable file.<br>
+
+Examples:
+---------
+    Get-ItemVersion -Path "C:\MySample.dll"
+
+--------------------------------------------------------------------------------
 
 Rename-Items
 ============
@@ -58,6 +81,31 @@ Examples:
     Start-AsAdmin -FilePath "cmd" -Arguments "/c help";
 
 --------------------------------------------------------------------------------
+Update-PipelineVariable
+=======================
+
+Summar: Updates an Azure pipeline variable group item value. Using the varible group ID and access token, this script updates the variable value. This script is good when you need to use a variable group value in another task on your pipeline and then update it from a different task.
+
+Location:
+---------
+Azure/Update-PipelineVariable.ps1
+
+Inputs:
+-------
+&nbsp;&nbsp;- VariableGroupId: Azure DevOps Variable Group ID<br>
+&nbsp;&nbsp;- VariableName: Azure DevOps Variable Name<br>
+&nbsp;&nbsp;- VariableName: Azure DevOps Variable Value<br>
+&nbsp;&nbsp;- AccessToken: Access Token<br>
+
+Examples:
+---------
+    Update-PipelineVariable `
+      -VariableGroupId 01 `
+      -VariableName 'foo' `
+      -VariableValue 'bar' `
+      -AccessToken $System.AccessToken;
+
+--------------------------------------------------------------------------------
 
 WaitFor-Pattern
 ===============
@@ -82,4 +130,3 @@ Examples:
     WaitFor-Pattern -Pattern "12:00" -ScriptBlock { Get-Date } -WaitInterval 1
     WaitFor-Pattern -Pattern "12:00" -ScriptBlock { Get-Date } -WaitInterval 1 -TimeoutInterval 60
     WaitFor-Pattern -Pattern "12:00" -ScriptBlock { Get-Date } -WaitInterval 1 -TimeoutInterval 60 -IsAntipattern
-
