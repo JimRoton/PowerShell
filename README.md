@@ -41,7 +41,7 @@ Summary: (WIP) Get files that have been modified for git and...
 
 Location:
 ---------
-Items/GitAdd-Items.ps1
+[Items/GitAdd-Items.ps1](https://github.com/JimRoton/PowerShell/blob/main/Items/GitAdd-Items.ps1)
 
 Inputs:
 -------
@@ -67,7 +67,7 @@ Summary: Accepts a version number as a string: xxx.xxx.xxx.xxx and an optional A
 
 Location:
 ---------
-Strings/Increment-Version.ps1
+[Strings/Increment-Version.ps1](https://github.com/JimRoton/PowerShell/blob/main/Strings/Increment-Version.ps1)
 
 Inputs:
 -------
@@ -88,7 +88,7 @@ Summary: Renames multiple items given a 'OldValue' and 'NewValue'. Optionally pr
 
 Location:
 ---------
-Items/Rename-Items.ps1
+[Items/Rename-Items.ps1](https://github.com/JimRoton/PowerShell/blob/main/Items/Rename-Items.ps1)
 
 Inputs:
 -------
@@ -118,7 +118,7 @@ Summary: Replaces a string value in a file using a pattern and a value. This scr
 
 Location:
 ---------
-Strings/Replace-String.ps1
+[Strings/Replace-String.ps1](https://github.com/JimRoton/PowerShell/blob/main/Strings/Replace-String.ps1)
 
 Inputs:
 -------
@@ -139,7 +139,7 @@ Summary: Run any process with elevated privilages.
 
 Location:
 ---------
-Processes/Start-AsAdmin.ps1
+[Processes/Start-AsAdmin.ps1](https://github.com/JimRoton/PowerShell/blob/main/Processes/Start-AsAdmin.ps1)
 
 Inputs:
 -------
@@ -152,6 +152,7 @@ Examples:
     Start-AsAdmin -FilePath "cmd" -Arguments "/c help";
 
 --------------------------------------------------------------------------------
+
 Update-PipelineVariable
 =======================
 
@@ -159,7 +160,7 @@ Summar: Updates an Azure pipeline variable group item value. Using the varible g
 
 Location:
 ---------
-Azure/Update-PipelineVariable.ps1
+[Azure/Update-PipelineVariable.ps1](https://github.com/JimRoton/PowerShell/blob/main/Azure/Update-PipelineVariable.ps1)
 
 Inputs:
 -------
@@ -185,7 +186,7 @@ Summary: Waits for a pattern in a string and returns "Found It" when the string 
 
 Location:
 ---------
-Strings/WaitFor-Pattern.ps1
+[Strings/WaitFor-Pattern.ps1](https://github.com/JimRoton/PowerShell/blob/main/Strings/WaitFor-Pattern.ps1)
 
 Inputs:
 -------
