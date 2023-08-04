@@ -1,3 +1,15 @@
+# ---------------------------------------------------
+# -  Author: Jim Roton
+# -    Date: 2023.07.26
+# -    Desc: (WIP) Get files that have been modified
+#       for git and...
+#
+# - Example: GitAdd-Items
+# - Example: GitAdd-Items -ItemList [List of files in git repo]
+# - Example: GitAdd-Items -Path "C:\Repos\MyRepo"
+# - Example: GitAdd-Items -Path "C:\Repos\MyRepo" -Pattern "*.xml"
+# - Example: GitAdd-Items -Path "C:\Repos\MyRepo" -Pattern "*.xml" -Log
+# ---------------------------------------------------
 [CmdletBinding(DefaultParameterSetName = 'ItemPath')]
 param(
     [Parameter(
@@ -57,7 +69,6 @@ try {
 
     # get item list by filter
     if ($null -eq $ItemList){
-#        $ItemList = Start-Process -FilePath "git" -ArgumentList "status", "-s" -WorkingDirectory $Path -PassThru -ErrorAction Stop;
         $FileList = (git $FilePath status -s);
 
         foreach ($_ in $FileList) {
