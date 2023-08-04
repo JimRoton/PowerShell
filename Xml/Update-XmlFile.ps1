@@ -1,10 +1,32 @@
-﻿param(
-    [Parameter(Mandatory=$true)]
-    [String]$FilePath,
-    [Parameter(Mandatory=$true)]
-    [String]$XmlKeyPath,
-    [Parameter(Mandatory=$true)]
-    [String]$XmlKeyValue
+﻿# ---------------------------------------------------
+# -  Author: Jim Roton
+# -    Date: 2023.07.17
+# -    Desc: Updates a value in a key within a an
+#       XML file. This script is good when you want
+#       to update a value in an XML file and then
+#       save the XML back to the file.
+#
+# - Example: Update-XmlFile -FilePath "C:\MyFile.xml" -XmlKeyPath "//mysection/mysubscetion/mykey" -XmlKeyValue "myvalue"
+# ---------------------------------------------------
+param(
+    [Parameter(
+        Position    = 0,
+        Mandatory   = $True,
+        HelpMessage = "Path to XML file."
+    )]
+    [String] $FilePath,
+    [Parameter(
+        Position    = 1,
+        Mandatory   = $True,
+        HelpMessage = "XPath to key to be updated."
+    )]
+    [String] $XmlKeyPath,
+    [Parameter(
+        Position    = 2,
+        Mandatory   = $True,
+        HelpMessage = "New value to be updated."
+    )]
+    [String] $XmlKeyValue
 )
 
 Write-Host "FilePath: '$FilePath'";
