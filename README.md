@@ -11,6 +11,7 @@ Table of Contents
  - [Replace-String](#replace-string)
  - [Start-AsAdmin](#start-asadmin)
  - [Update-PipelineVariable](#update-pipelinevariable)
+ - [Update-XmlFile](#update-xmlfile)
  - [WaitFor-Pattern](#waitfor-pattern)
 
 --------------------------------------------------------------------------------
@@ -176,6 +177,27 @@ Examples:
       -VariableName 'foo' `
       -VariableValue 'bar' `
       -AccessToken $System.AccessToken;
+
+--------------------------------------------------------------------------------
+
+Update-XmlFile
+==============
+
+Summary: Updates a value in a key within a an XML file. This script is good when you want to update a value in an XML file and then save the XML back to the file.
+
+Location:
+---------
+[Xml/Update-XmlFile.ps1](https://github.com/JimRoton/PowerShell/blob/main/Xml/Update-XmlFile.ps1)
+
+Inputs:
+-------
+&nbsp;&nbsp;- FilePath: Path to XML file.<br>
+&nbsp;&nbsp;- XmlKeyPath: XPath to key to be updated.<br>
+&nbsp;&nbsp;- XmlKeyValue: New value to be updated.<br>
+
+Examples:
+---------
+    Update-XmlFile -FilePath "C:\MyFile.xml" -XmlKeyPath "//mysection/mysubscetion/mykey" -XmlKeyValue "myvalue"
 
 --------------------------------------------------------------------------------
 
