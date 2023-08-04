@@ -22,7 +22,7 @@ Summary: Returns the FileVersion of a file. The file must be an executable file 
 
 Locations:
 ----------
-Items/Get-ItemVersion.ps1
+[Items/Get-ItemVersion.ps1](https://github.com/JimRoton/PowerShell/blob/main/Items/Get-ItemVersion.ps1)
 
 Inputs:
 -------
