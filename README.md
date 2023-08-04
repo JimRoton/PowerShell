@@ -6,6 +6,7 @@ Table of Contents
 
  - [Get-ItemVersion](#get-itemversion)
  - [Get-Add-Items](#get-additems)
+ - [Increment-Version](#increment-version)
  - [Rename-Items](#rename-items)
  - [Start-AsAdmin](#start-asadmin)
  - [Update-PipelineVariable](#update-pipelinevariable)
@@ -55,6 +56,27 @@ Examples:
     GitAdd-Items -Path "C:\Repos\MyRepo"
     GitAdd-Items -Path "C:\Repos\MyRepo" -Pattern "*.xml"
     GitAdd-Items -Path "C:\Repos\MyRepo" -Pattern "*.xml" -Log
+
+--------------------------------------------------------------------------------
+
+Increment-Version
+=================
+
+Summary: Accepts a version number as a string: xxx.xxx.xxx.xxx and an optional AND value to indicate which parts of the version should be incremented. By default the build number is incremented.
+
+Location:
+---------
+String/Increment-Version.ps1
+
+Inputs:
+-------
+&nbsp;&nbsp;- Version: Version string to increment.<br>
+&nbsp;&nbsp;- Increment: Values to be updated as (AND).<br>
+
+Examples:
+---------
+    Increment-Version -Version "1.0.0.1"
+    Increment-Version -Version "1.0.0.1" -Increment 2
 
 --------------------------------------------------------------------------------
 
