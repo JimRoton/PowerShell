@@ -2,7 +2,7 @@
 # -  Author: Jim Roton
 # -    Date: 2023.07.30
 # -    Desc: Accepts a version number as a string:
-#       xxx.xxx.xxx.xxx and an options AND value
+#       xxx.xxx.xxx.xxx and an optional AND value
 #       to indicate which parts of the version should
 #       be incremented. By default the build number
 #       is incremented.
