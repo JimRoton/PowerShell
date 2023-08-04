@@ -1,3 +1,15 @@
+# ---------------------------------------------------
+# -  Author: Jim Roton
+# -    Date: 2023.07.30
+# -    Desc: Accepts a version number as a string:
+#       xxx.xxx.xxx.xxx and an options AND value
+#       to indicate which parts of the version should
+#       be incremented. By default the build number
+#       is incremented.
+#
+# - Example: Increment-Version -Version "1.0.0.1"
+# - Example: Increment-Version -Version "1.0.0.1" -Increment 2
+# ---------------------------------------------------
 param(
     [Parameter(
         Position            = 0,
@@ -7,9 +19,9 @@ param(
     [String]$Version,
     [Parameter(
         Position            = 1,
-        Mandatory           = $True,
+        Mandatory           = $False,
         HelpMessage         = "Values to be updated as (AND).")]
-    [Int16]$Increment
+    [Int16]$Increment       = 8
 )
 try {
     
