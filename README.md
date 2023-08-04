@@ -5,7 +5,7 @@ Table of Contents
 =================
 
  - [Get-ItemVersion](#get-itemversion)
- - [Get-Add-Items](#get-additems)
+ - [GitAdd-Items](#gitadd-items)
  - [Increment-Version](#increment-version)
  - [Rename-Items](#rename-items)
  - [Replace-String](#replace-string)
