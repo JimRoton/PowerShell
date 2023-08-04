@@ -67,7 +67,7 @@ Summary: Accepts a version number as a string: xxx.xxx.xxx.xxx and an optional A
 
 Location:
 ---------
-String/Increment-Version.ps1
+Strings/Increment-Version.ps1
 
 Inputs:
 -------
@@ -118,7 +118,7 @@ Summary: Replaces a string value in a file using a pattern and a value. This scr
 
 Location:
 ---------
-String/Replace-String.ps1
+Strings/Replace-String.ps1
 
 Inputs:
 -------
